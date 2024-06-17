@@ -33,7 +33,7 @@ export const serverCall = async(url, method, data={}, additonalHeader={}) =>{
         }
       }
     } catch (error) {
-        console.log(error)
+        // console.log(error)
         return {
             success: false,
             data: {},
