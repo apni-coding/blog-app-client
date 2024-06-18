@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux';
+import { loginUser } from './redux/disptacher';
 
 function Signin() {
+    const dispatch = useDispatch()
     const [userData, setUserData]  = useState({
         email: '',
         password: ''
@@ -14,7 +17,7 @@ function Signin() {
  
      const handleSubmitButton = (e)=>{
          e.preventDefault();
-        console.log(userData)
+        dispatch(loginUser(userData))
      }
   return (
     <>

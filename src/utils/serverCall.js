@@ -19,7 +19,7 @@ export const serverCall = async(url, method, data={}, additonalHeader={}) =>{
         //api calling using axios
       const response =  await axios.request(requestObject);
     
-      if(response.status === 201){
+      if(response.status === 201 || response.status === 200){
         return {
             success: true,
             data: response.data,
