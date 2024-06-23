@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { loginUser } from './redux/disptacher';
+import { Link } from 'react-router-dom';
 
 function Signin() {
     const dispatch = useDispatch()
@@ -41,6 +42,7 @@ function Signin() {
                 onChange={changeInputHandle}
                 />
                 <button type="submit" className='btn primary'>Sign In</button>
+                <small>Create an account <Link to='/signup'>Sigin Up</Link></small>
             </form>
         </div>
       </section>

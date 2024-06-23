@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { registerUser } from './redux/dispatcher'
+import { Link } from 'react-router-dom'
 
 function Signup() {
     const dispatch = useDispatch()
@@ -60,6 +61,7 @@ function Signup() {
                     />
 
                     <button type='submit' className='btn primary'>Sign Up</button>
+                    <small>Already have an Account? <Link to='/signin'>Sigin In</Link></small>
                 </form>
             </div>
         </section>
