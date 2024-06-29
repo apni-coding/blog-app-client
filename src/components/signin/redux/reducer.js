@@ -2,7 +2,7 @@ import { ERROR_LOGIN_REQUEST_DATA, INIT_LOGIN_REQUEST_DATA, LOGOUT_USER, SET_LOG
 
 
 const initialState = {
-    data: {},
+    data: '',
     isLoading: false,
     error: ''
 }

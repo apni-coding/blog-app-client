@@ -14,7 +14,7 @@ export const loginUser = (data) =>{
             if(result.success &&  result.data ){
                 const token = result.data.token;
                 localStorage.setItem('authToken', token)
-                toast.success('User Signup successfully')
+                toast.success('User Signin successfully')
                 dispatch(setLoginRequestData(result.data))
             }else{
                 toast.error(result.message)

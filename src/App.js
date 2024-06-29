@@ -1,4 +1,5 @@
 import './App.css';
+import ProtectedRoute from './ProtectedRoute';
 import CreatePost from './components/post/createPost/CreatePost';
 import Signin from './components/signin/Signin';
 import Signup from './components/signup/Signup';
@@ -13,7 +14,8 @@ function App() {
 
         <Route path='/signin' element={<Signin/>} />
         <Route path='/signup' element={<Signup/>} />
-        <Route path='/post/create' element={<CreatePost/>} />
+        {/* <Route path='/post/create' element={<CreatePost/>} /> */}
+        <Route path='/post/create' element={<ProtectedRoute element={CreatePost} />} />
 
       </Routes>
     </Router>

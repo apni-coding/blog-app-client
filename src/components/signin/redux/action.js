@@ -9,6 +9,7 @@ export function initLoginRequestData(){
 }
 
 export function setLoginRequestData(data){
+    console.log(data)
     return {type: SET_LOGIN_REQUEST_DATA, payload: data}
 }
 
