@@ -1,3 +1,4 @@
+import { useSelector } from 'react-redux';
 import './App.css';
 import ProtectedRoute from './ProtectedRoute';
 import CreatePost from './components/post/createPost/CreatePost';
@@ -6,6 +7,8 @@ import Signup from './components/signup/Signup';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
+  const isAuthenticated = useSelector((state)=> state.loginReducer);
+console.log(isAuthenticated)
   return (
     <>
     <Router>
