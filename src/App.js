@@ -8,7 +8,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   const isAuthenticated = useSelector((state)=> state.loginReducer);
-console.log(isAuthenticated)
+  const postcreate = useSelector((state)=> state.createPostReducer);
+
+console.log(postcreate)
   return (
     <>
     <Router>

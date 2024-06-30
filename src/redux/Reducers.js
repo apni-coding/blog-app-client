@@ -1,11 +1,13 @@
 import { combineReducers } from "redux";
 import registerReducer from "../components/signup/redux/reducer";
 import loginReducer from "../components/signin/redux/reducer";
+import createPostReducer from "../components/post/createPost/redux/reducer";
 
 
 const appReducer = combineReducers({
     registerReducer: registerReducer,
-    loginReducer: loginReducer
+    loginReducer: loginReducer,
+    createPostReducer:createPostReducer
 });
 
 const rootReducer = (state, action) =>{

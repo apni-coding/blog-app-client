@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
+import { useDispatch } from 'react-redux';
+import { createPost } from './redux/dispatcher';
 
 export default function CreatePost() {
+    const dispatch = useDispatch()
     const [title, setTitle] = useState('');
     const [category, setCategory] = useState('');
     const [description, setDescription] = useState('');
@@ -29,7 +32,17 @@ export default function CreatePost() {
 
     const handleCreatePost = (e)=>{
         e.preventDefault()
-        console.log(category)
+       
+        //create a formData object
+        const formData = new FormData()
+
+        //append the file to the FormData Object
+        formData.append('thumbnail', thumbnail);
+        formData.append('title', title);
+        formData.append('description', description);
+        formData.append('category', category);
+        dispatch(createPost(formData))
+
     }
   return (
     <>
