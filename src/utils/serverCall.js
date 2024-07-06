@@ -2,10 +2,14 @@ import axios from "axios";
 
 export const serverCall = async(url, method, data={}, additonalHeader={}) =>{
     try {
-        const token  = 'aaaa'
+        const token = localStorage.getItem('authToken')
+
+        //Determine if the data is FormData
+        const isFormData = data instanceof FormData;
 
         const headers = {
             'Authorization' : `Bearer ${token}`,
+            ...(isFormData ? {'Content-Type' : 'multipart/form-data'}:{'Contaent-Type':'application/json'}),
             ...additonalHeader
         };
 

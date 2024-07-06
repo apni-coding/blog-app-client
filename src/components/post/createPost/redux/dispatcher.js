@@ -1,7 +1,7 @@
-import axios from "axios";
 import { createPostFailure, createPostRrequest, createPostSuccess } from "./action";
 import apiEndPoints from "../../../../utils/apiList";
 import toast from "react-hot-toast";
+import { serverCall } from "../../../../utils/serverCall";
 
 
 export const createPost = (data) =>{
@@ -9,16 +9,7 @@ export const createPost = (data) =>{
         dispatch(createPostRrequest());
 
         try {
-            // let result = await serverCall(apiEndPoints.AUTH_LOGIN, 'POST', data);
-            // console.log(result)
-            const token = localStorage.getItem('authToken')
-            console.log(token)
-            const headers = {
-                'Authorization' : `Bearer ${token}`,
-                'Content-Type' : 'multipart/form-data'
-            };
-            const result = await axios.post(apiEndPoints.POST_CREATE, data, {headers})
-            console.log(result)
+            let result = await serverCall(apiEndPoints.AUTH_LOGIN, 'POST', data);
             if(  result.data ){
                 toast.success('Post create successfully')
                 dispatch(createPostSuccess(result.data))
