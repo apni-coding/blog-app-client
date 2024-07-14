@@ -5,6 +5,8 @@ const apiEndPoints = {
     AUTH_REGISTER: `${API_BASE_URL}users/register`,
     
     POST_CREATE:`${API_BASE_URL}posts`, 
+    POSTS_GET:`${API_BASE_URL}posts`, 
+
 
 };
 
