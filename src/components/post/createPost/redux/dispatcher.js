@@ -9,7 +9,7 @@ export const createPost = (data) =>{
         dispatch(createPostRrequest());
 
         try {
-            let result = await serverCall(apiEndPoints.AUTH_LOGIN, 'POST', data);
+            let result = await serverCall(apiEndPoints.POST_CREATE, 'POST', data);
             if(  result.data ){
                 toast.success('Post create successfully')
                 dispatch(createPostSuccess(result.data))

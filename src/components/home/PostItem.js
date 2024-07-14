@@ -1,4 +1,6 @@
 import React from 'react'
+import PostAuthor from '../postAuthor/PostAuthor';
+import { Link } from 'react-router-dom';
 
 export default function PostItem({post}) {
    
@@ -11,11 +13,15 @@ export default function PostItem({post}) {
             <img src={post?.thumbnail} alt={post?.title} />
         </div>
         <div className="post_content">
+            <Link to={`/posts/${post?._id}`}>
             <h3>{shortTitle}</h3>
+            </Link>
+           
         </div>
         <p dangerouslySetInnerHTML={{__html: shortDescription}}></p>
         <div className="post_footer">
-
+          <PostAuthor createdAt={post?.createdAt} authorId={post?.creator}/>
+          <Link to={`/posts/category/${post?.category}`} className='btn category'>{post?.category}</Link>
         </div>
       </article>
     </>
